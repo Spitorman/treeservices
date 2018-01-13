@@ -32,7 +32,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -40,29 +40,39 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#home">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#serv">Services</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#cont">Contact</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<div id="home"></div>
     <!-- Header -->
-    <header id="top" class="header">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="jumbo.png">
+          <header id="top" class="header">
         <div class="text-vertical-center">
 <span style="font-size: 30px;">we are only  a phone call away</span> <br>
             <b><span style="font-size: 38px;">07508 339 312</span> <br>
                 <span style="font-size: 38px;">CALL US NOW</span></b> <br>
             <span style="font-size: 30px;">for a price estimation</span>
         </div>
-    </header>
+    </header> 
+    </div>
+ 
+    <div id="serv"></div><br>
 <div class="serv">
     <div class="container">
         <center><h1><b>SERVICES</b></h1></center>
@@ -97,6 +107,7 @@
         </div>
     </div>
 </div>
+<div id="about"></div>
  <div class="about">
      <div class="container">
          <div class="row">
@@ -120,6 +131,7 @@
          </div>
      </div>
  </div>
+ <div id="cont"></div>
 <div class="contact">
     <div class="container">
         <div class="row">
@@ -192,13 +204,39 @@
        </div>
    </div>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+<script src="js/parallax.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 
 </body>
 
