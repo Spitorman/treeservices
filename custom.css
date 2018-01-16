@@ -79,7 +79,7 @@ body {
     padding: 10px 0px;
 }
 .margp {
- margin-right: 20px   
+ margin-right: 20px;   
 }
 .font22 {
     font-size: 14px;
@@ -100,4 +100,17 @@ body {
     padding: 10px;
     background-color: #1d1a20;
     color: white;
+}
+@media only screen and (max-width: 500px) {
+    .centerxs {
+        text-align: center;
+    }
+    .font {
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .centerxs {
+        text-align: center;
+    }
 }
